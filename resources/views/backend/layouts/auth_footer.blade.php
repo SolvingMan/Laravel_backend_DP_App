@@ -1,4 +1,4 @@
-<div class="copyright"> 2017 © StreaVR - Admin Dashboard </div>
+<div class="copyright"> 2017 © Deep Personality - Admin Dashboard </div>
 
 <!--[if lt IE 9]>
 <script src="/assets/global/plugins/respond.min.js"></script>

@@ -38,12 +38,18 @@ class UserController extends Controller {
             $userClass = new User();
             $userClass->created_at = time();
             $userClass->updated_at = time();
+            $userClass->username = Input::get('username', 'sdf');
+            $userClass->confirmed = Input::get('confirmed', 0);
+            $userClass->confirmed_str = Input::get('confirmed_str', 0);
+            $userClass->country_birth = Input::get('country_birth', '');
+            $userClass->country_residence = Input::get('country_residence', '');
+            $userClass->gender = Input::get('gender', 'male');
+            $userClass->age = Input::get('age', 0);
             $userClass->password = Hash::make( Input::get('password') );
         }
 
         $userClass->first_name = Input::get('first_name');
         $userClass->last_name = Input::get('last_name');
-        // $userClass->username = Input::get('username');
         $userClass->email = Input::get('email');
         $userClass->user_level = Input::get('role');
         $userClass->save();

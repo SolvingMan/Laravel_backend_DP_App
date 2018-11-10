@@ -64,6 +64,15 @@ return [
                 ]
             ]
         ], [
+            'id' => 'questions',
+            'name' => 'Question Upload',
+            'url' => '/questions',
+            'icon' => 'icon-docs',
+            'hidden' => 0,
+            'user_level' => [1, 2],
+            'children' => [
+            ]
+        ],[
             'id' => 'users',
             'name' => 'Users',
             'url' => '',
