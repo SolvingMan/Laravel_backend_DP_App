@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\File;
 
-class Questions extends Model
+class Traits extends Model
 {
-    protected $table = 'questions';
+    //
+    protected $table = 'traits';
 }

@@ -36,11 +36,11 @@ var UserClass = function () {
                     className: 'text-align-left',
                     width: '100'
                 },
-                {
-                    data: 'enable',
-                    className: 'text-align-center',
-                    width: 80
-                },
+                // {
+                //     data: 'enable',
+                //     className: 'text-align-center',
+                //     width: 80
+                // },
                 {
                     data: null,
                     searchable: false,

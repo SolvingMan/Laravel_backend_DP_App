@@ -31,7 +31,7 @@ class UserController extends Controller {
         if( $id ) {  // Update
             $userClass = User::find($id);
             $userClass->updated_at = time();
-            $userClass->enable = Input::get('enable');
+            // $userClass->enable = Input::get('enable');
             if (Input::get('password'))
                 $userClass->password = Hash::make( Input::get('password') );
         } else {    // New

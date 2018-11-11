@@ -73,14 +73,43 @@ $auth_user = \Illuminate\Support\Facades\Auth::user();
                     </div>
                 </div>
                 <div class="portlet-body">
-                <form class="form-horizontal" method="POST" action="" enctype="multipart/form-data">
+                <form class="form-horizontal" method="POST" action="/questions/import" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('excel_file') ? ' has-error' : '' }}">
                                 <label for="Excel_file" class="col-md-4 control-label">EXCEL file to import</label>
-
+                                    @if ( Session::has('success') )
+                                        <div class="alert alert-success alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                            <span class="sr-only">Close</span>
+                                        </button>
+                                        <strong>{{ Session::get('success') }}</strong>
+                                    </div>
+                                    @endif
+ 
+                                    @if ( Session::has('error') )
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                            <span class="sr-only">Close</span>
+                                        </button>
+                                        <strong>{{ Session::get('error') }}</strong>
+                                    </div>
+                                    @endif
+                                
+                                    @if (count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <div>
+                                        @foreach ($errors->all() as $error)
+                                        <p>{{ $error }}</p>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                @endif
                                 <div class="col-md-6">
-                                    <input id="excel_file" type="file" class="form-control" name="excel_file" required>
+                                    <input id="file" type="file" class="form-control" name="file" required>
 
                                     @if ($errors->has('excel_file'))
                                         <span class="help-block">
@@ -89,21 +118,10 @@ $auth_user = \Illuminate\Support\Facades\Auth::user();
                                     @endif
                                 </div>
                             </div>
-
-                            <!-- <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="header" checked> File contains header row?
-                                        </label>
-                                    </div>
-                                </div>
-                            </div> -->
-
                             <div class="form-group">
                                 <div class="col-md-8 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Parse CSV
+                                        Parse Excel
                                     </button>
                                 </div>
                             </div>

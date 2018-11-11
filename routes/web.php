@@ -52,6 +52,7 @@ Route::middleware(['auth'])->group(function () {
      * User
      */
     Route::get('questions', 'Backend\QuestionsController@questions');
+    Route::post('questions/import', 'Backend\QuestionsController@importquestions');
 
 });
 
