@@ -3,10 +3,14 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Backend\Questions;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
-
+use Illuminate\Support\Facades\DB;
+use Session;
+use Excel;
+use File;
 
 class UserController extends Controller {
     /**
@@ -39,10 +43,17 @@ class UserController extends Controller {
      * Login
      */
     public function login() {
-        if (Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password'), 'enable' => 1])) {
+        if (Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')])) {
+            $questions =DB::table('questions')->get();
+
+
             $data = [
                 'result' => 'success',
-                'data' => Auth::user()
+                'data' => Auth::user(),
+                'quesitons_count' =>   count($questions),
+                'batch_size' => 30,
+                'question_done' => 100,
+                
             ];
         } else {
             $data = [

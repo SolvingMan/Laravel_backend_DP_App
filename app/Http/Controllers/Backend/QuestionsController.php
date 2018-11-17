@@ -81,7 +81,7 @@ class QuestionsController extends Controller
                                 $trait_id = $same_trait[0]->id;
                             }
                         
-                            if (!($exist_trait && $exist_question) ) {
+                            // if (!($exist_trait && $exist_question) ) {
                                 // Insert question_id, traits_id, and key in "qtkey" Table
                                 $insert = [
                                     'question_id' => $question_id,
@@ -98,7 +98,7 @@ class QuestionsController extends Controller
                                     exit;
                                     return back();
                                 }
-                            }
+                            // }
                         } 
                     }
                 }
