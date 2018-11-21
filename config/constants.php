@@ -9,61 +9,63 @@ return [
             'hidden' => 0,
             'user_level' => [1, 2],
             'children' => []
-        ], [
-            'id' => 'videos',
-            'name' => 'Videos',
-            'url' => '',
-            'icon' => 'icon-social-youtube',
-            'hidden' => 0,
-            'user_level' => [1, 2],
-            'children' => [
-                [
-                    'id' => 'video_all',
-                    'name' => 'All Videos',
-                    'url' => '/videos',
-                    'icon' => '',
-                    'hidden' => 0,
-                    'user_level' => [1, 2],
-                    'children' => [
-                        [
-                            'id' => 'video_edit',
-                            'name' => 'Edit Video',
-                            'url' => '/video/edit/{id}',
-                            'icon' => '',
-                            'hidden' => 1,
-                            'user_level' => [1, 2],
-                            'children' => []
-                        ]
-                    ]
-                ], [
-                    'id' => 'video_add',
-                    'name' => 'Add Video',
-                    'url' => '/video/new',
-                    'icon' => '',
-                    'hidden' => 0,
-                    'user_level' => [1, 2],
-                    'children' => []
-                ], [
-                    'id' => 'video_categories',
-                    'name' => 'Categories',
-                    'url' => '/video/categories',
-                    'icon' => '',
-                    'hidden' => 0,
-                    'user_level' => [1],
-                    'children' => [
-                        [
-                            'id' => 'video_category_edit',
-                            'name' => 'Edit Category',
-                            'url' => '/video/category/edit/{id}',
-                            'icon' => '',
-                            'hidden' => 1,
-                            'user_level' => [1],
-                            'children' => []
-                        ]
-                    ]
-                ]
-            ]
-        ], [
+        ],
+        //  [
+        //     'id' => 'videos',
+        //     'name' => 'Videos',
+        //     'url' => '',
+        //     'icon' => 'icon-social-youtube',
+        //     'hidden' => 0,
+        //     'user_level' => [1, 2],
+        //     'children' => [
+        //         [
+        //             'id' => 'video_all',
+        //             'name' => 'All Videos',
+        //             'url' => '/videos',
+        //             'icon' => '',
+        //             'hidden' => 0,
+        //             'user_level' => [1, 2],
+        //             'children' => [
+        //                 [
+        //                     'id' => 'video_edit',
+        //                     'name' => 'Edit Video',
+        //                     'url' => '/video/edit/{id}',
+        //                     'icon' => '',
+        //                     'hidden' => 1,
+        //                     'user_level' => [1, 2],
+        //                     'children' => []
+        //                 ]
+        //             ]
+        //         ], [
+        //             'id' => 'video_add',
+        //             'name' => 'Add Video',
+        //             'url' => '/video/new',
+        //             'icon' => '',
+        //             'hidden' => 0,
+        //             'user_level' => [1, 2],
+        //             'children' => []
+        //         ], [
+        //             'id' => 'video_categories',
+        //             'name' => 'Categories',
+        //             'url' => '/video/categories',
+        //             'icon' => '',
+        //             'hidden' => 0,
+        //             'user_level' => [1],
+        //             'children' => [
+        //                 [
+        //                     'id' => 'video_category_edit',
+        //                     'name' => 'Edit Category',
+        //                     'url' => '/video/category/edit/{id}',
+        //                     'icon' => '',
+        //                     'hidden' => 1,
+        //                     'user_level' => [1],
+        //                     'children' => []
+        //                 ]
+        //             ]
+        //         ]
+        //     ]
+        // ], 
+        [
             'id' => 'questions',
             'name' => 'Question Upload',
             'url' => '/questions',
